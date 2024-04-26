@@ -5,6 +5,7 @@ ENV PYTHONUNBUFFERED=1
 #RUN sed -i "s@http://security.debian.org@http://mirrors.ustc.edu.cn@g" /etc/apt/sources.list
 #RUN sed -i "s@http://deb.debian.org@http://mirror.sjtu.edu.cn@g" /etc/apt/sources.list
 #RUN sed -i "s@http://security.debian.org@http://mirror.sjtu.edu.cn@g" /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
 RUN mkdir /proxy
 RUN mkdir /proxy/mnt
 RUN mkdir /proxy/scripts

@@ -1,6 +1,7 @@
 # In template, functions are across different workflows.
 import os.path
 
+USER_NAME = 'cc'
 KAFKA_IP = '192.168.6.127'
 GATEWAY_IP = '192.168.6.126'
 COUCHDB_IP = '192.168.6.127'
@@ -17,16 +18,16 @@ GATEWAY_URL = f'{GATEWAY_IP}:7000'
 
 FUNCTIONS_INFO_PATH = '../../benchmark'
 WORKFLOWS_INFO_PATH = {
-                       'video': os.path.expanduser('~/FaaSFlow/benchmark/video'),
-                       'wordcount': os.path.expanduser('~/FaaSFlow/benchmark/wordcount'),
-                       'recognizer': os.path.expanduser('~/FaaSFlow/benchmark/recognizer'),
-                       'svd': os.path.expanduser('~/FaaSFlow/benchmark/svd')}
+                       'video': os.path.expanduser(f'~{USER_NAME}/FaaSFlow/benchmark/video'),
+                       'wordcount': os.path.expanduser(f'~{USER_NAME}/FaaSFlow/benchmark/wordcount'),
+                       'recognizer': os.path.expanduser(f'~{USER_NAME}/FaaSFlow/benchmark/recognizer'),
+                       'svd': os.path.expanduser(f'~{USER_NAME}/FaaSFlow/benchmark/svd')}
 if os.path.exists('/state/partition2/FaaSFlow'):
     PREFETCH_POOL_PATH = '/state/partition2/FaaSFlow/prefetch_pool'
     FILE_CONTROLLER_PATH = '/state/partition2/FaaSFlow/file_controller'
 else:
-    PREFETCH_POOL_PATH = os.path.expanduser('~/FaaSFlow/prefetch_pool')
-    FILE_CONTROLLER_PATH = os.path.expanduser('~/FaaSFlow/file_controller')
+    PREFETCH_POOL_PATH = os.path.expanduser(f'~{USER_NAME}/FaaSFlow/prefetch_pool')
+    FILE_CONTROLLER_PATH = os.path.expanduser(f'~{USER_NAME}/FaaSFlow/file_controller')
 CHUNK_SIZE = 1 * 1024 * 1024
 
 DOCKER_CPU_QUOTA = 100000
